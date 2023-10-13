@@ -1,0 +1,76 @@
+.div11
+{
+    
+    background-color:cornsilk;
+    padding: 10px 0;
+   /* float:left; */
+    width: 30%;
+    border:12px;
+    border-color: cornflowerblue;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+.div12
+{
+    background-color:burlywood;
+    padding: 10px;
+    float:left;
+    width: 30%;
+    border:12px;
+    border-color: cornflowerblue;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+.div13
+{
+    background-color:cornsilk;
+    padding: 10px;
+    float:left;
+    width: 30%;
+    border:12px;
+    border-color: cornflowerblue;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+.empty
+{
+    background-color:aliceblue;
+    width: 305;
+    /* float:left; */
+}
+.empty1
+{
+    background-color: aliceblue; 
+    width: 80%; 
+    height: 10px;
+}
+article {
+        margin-bottom: 40px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 20px;
+        background: linear-gradient(cornsilk,burlywood);
+    }
+    .course {
+        border: 8px solid coral;
+        border-left: 8px solid cornflowerblue;
+        border-bottom: 8px solid cornflowerblue;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .course h3 {
+        margin-bottom: 5px;
+    }
+    
+    a {
+        text-decoration: none;
+        background-color: #333;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+.div11:hover
+{
+    background-color:cornflowerblue
+}   

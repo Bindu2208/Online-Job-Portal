@@ -1,0 +1,68 @@
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Job Portal Name</title>
+    <link
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'employer/employdash.css' %}" />
+  </head>
+  <body style="background-image:url('{%static "media/emphome.png"%}')">
+    <header>
+      <nav>
+        <div class="logo">Job Portal Name</div>
+        <ul>
+          <li><a href= "{% url 'employdash' %}">Dashboard</a></li>
+          <a href="{% url 'jobpost'%}">Post Job Openings</a>
+            {% comment %} <li>
+             
+                <span
+                  class="fa fa-magnifying-glass"
+                  width="5000px"
+                  heigth="5000px"
+                ></span
+                ><input
+                  type="text"
+                  class="search"
+                  placeholder="Search Resumes"
+                  class="in"
+                  style="border-radius: 10px;"
+                />
+              </a>
+            </li> {% endcomment %}
+          </div>
+          <a href="{% url 'company'%}">Company Branding</a>
+          <a href="{% url 'ats'%}">Applicant Tracking System</a>
+          <a href="{% url 'crt'%}">Recruitment Analytics</a>
+          <li><a href= "{% url 'jobl' %}">Joblist</a></li>
+          <li><a href="{% url 'home'%}">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <center>
+      <br><br><br><br><br>
+    <div class="hero">
+      <h1>Welcome , {{user.name}}!!!</h1>
+      <p style="justify-content: center">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati
+        natus reprehenderit exercitationem rerum vero molestias praesentium?
+        Animi vitae odit omnis quam et culpa, fuga, magnam nam totam velit
+        dolorem voluptate? Explore a diverse range of job opportunities from
+        leading companies across various industries.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati
+        natus reprehenderit exercitationem rerum vero molestias praesentium?
+        Animi vitae odit omnis quam et culpa, fuga, magnam nam totam velit
+        dolorem voluptate? Explore a diverse range of job opportunities from
+        leading companies across various industries.
+      </p>
+    </div>
+  </center>
+    <footer>
+      <p>&copy; 2023 Job Portal Name. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

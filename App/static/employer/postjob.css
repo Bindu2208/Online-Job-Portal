@@ -1,0 +1,134 @@
+/* .bindu
+{
+    text-align:center;
+    margin-top: 40px;
+   
+}
+body
+{
+    background:linear-gradient(cornflowerblue,darkseagreen);
+   
+}
+ form{
+    width:20%;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    left:50%;
+    transform:translate(-50%);
+
+} 
+form input{
+   
+    border:1px solid rgba(0,0,0,0.4);
+    border-radius: 10px;
+    outline:none;
+    height: 30px;
+    width: 100%;
+
+}
+
+
+input::placeholder{
+    font-weight:normal;
+    font-size:13px;
+ 
+}
+input:focus::placeholder{
+    position:absolute;
+    font-size:10px;
+   
+}
+form button{
+    border:none;
+    background:#043fff;
+    padding:5px 0;
+    color:#fff;
+    border-radius:3px;
+    font-weight: bold;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    outline: none;
+    cursor: pointer;
+}
+form button:active{
+    background: #2c58fe;
+    transform:scale(0.995);
+}
+ */
+
+.get
+{
+  border-left: 2px dotted #ff0000;
+       
+}
+
+.infield
+{
+    max-width:200px;
+    width:100%;
+    height:40px;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    border-radius: 55px;
+    font-size: 20;
+    font-weight: 200;
+    text-align: center;
+}
+.bt1
+{
+    width:150px;
+    height:49px;
+    outline:none;
+    border:none;
+    border-radius: 48px;
+    background-color: cadetblue;
+    color: aliceblue;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+/* body
+{
+    background:linear-gradient(cornflowerblue,darkseagreen);
+   
+} */
+/* 
+form{
+    width:90%;
+    /* display:flex; */
+    /* flex-direction:column; */
+    /* position:relative; */
+    /* left:50%; */
+    /* transform:translate(-50%); */
+
+/* }  */
+form input{
+   
+    border:1px solid rgba(0,0,0,0.4);
+    border-radius: 10px;
+    /* outline:none; */
+     height: 30px; 
+    width: 50%; 
+
+ }  
+.form-container {
+    border: 20px solid #0074d9; /* Border color and thickness */
+    padding: 30px; /* Add some padding for spacing */
+    width:30%;
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Add CSS styles for the legend (form title) */
+.form-legend {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding: 10px;
+   
+    border:1px solid rgba(0,0,0,0.4);
+    color: #0074d9; /* Legend text color */
+
+}
+

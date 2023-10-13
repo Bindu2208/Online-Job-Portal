@@ -1,0 +1,99 @@
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Job Portal Name</title>
+    <link
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'employer/employdash.css' %}" />
+    <link rel="stylesheet" href="{% static 'employer/company.css' %}" />
+  </head>
+  <body style="background-image: url('{% static "media/emphome.png"%}');">
+    <header>
+      <nav>
+        <div class="logo">Job Portal Name</div>
+        <ul>
+          <li><a href= "{% url 'employdash' %}">Dashboard</a></li>
+          <a href="{% url 'jobpost'%}">Post Job Openings</a>
+            {% comment %} <li>
+             
+                <span
+                  class="fa fa-magnifying-glass"
+                  width="5000px"
+                  heigth="5000px"
+                ></span
+                ><input
+                  type="text"
+                  class="search"
+                  placeholder="Search Resumes"
+                  class="in"
+                  style="border-radius: 10px;"
+                />
+              </a>
+            </li> {% endcomment %}
+          </div>
+          <a href="{% url 'company'%}">Company Branding</a>
+          <a href="{% url 'ats'%}">Applicant Tracking System</a>
+          <a href="{% url 'crt'%}">Recruitment Analytics</a>
+          <li><a href= "{% url 'jobl' %}">Joblist</a></li>
+          <li><a href="{% url 'home'%}">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 style="color:#333">Welcome to XYZ Company</h1>
+            <p style="color:#333">Your Trusted Partner for Quality Services</p>
+            <a href="#contact" class="btn">Contact Us</a>
+        </div>
+    </section>
+    
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p>We are a leading company that specializes in providing top-notch services to our clients.</p>
+        </div>
+    </section>
+    
+    <section id="services" class="services">
+        <div class="services-content">
+            <h2>Our Services</h2>
+            <ul>
+                <li>{% lorem 5 b random %}</li>
+                <li>Service 2</li>
+                <li>Service 3</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact">
+        <div class="contact-content">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or inquiries, please feel free to contact us.</p>
+            <a href="mailto:kovuribindusree2003@gmail.com" class="btn">Email Us</a>
+        </div>
+    </section>
+    <footer>
+      <p>&copy; 2023 Job Portal Name. All rights reserved.</p>
+    </footer>
+    <script >
+
+        // Example: Change the background color of the header when scrolled
+window.addEventListener('scroll', function () {
+    const header = document.querySelector('header');
+    if (window.scrollY > 100) {
+        header.style.backgroundColor = '#333'; // Change the color to a darker shade
+    } else {
+        header.style.backgroundColor = '#333'; // Revert to the original color
+    }
+});
+
+    </script>
+</body>
+  </body>
+</html>

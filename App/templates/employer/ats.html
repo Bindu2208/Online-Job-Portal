@@ -1,0 +1,105 @@
+
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Job Portal Name</title>
+    <link
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'employer/employdash.css' %}" />
+    <link rel="stylesheet" href="{% static 'employer/ats.css' %}" />
+  </head>
+  <body style="background-image: url('images/p51.png');">
+    <header>
+      <nav>
+        <div class="logo">Job Portal Name</div>
+        <ul>
+          <li><a href= "{% url 'employdash' %}">Dashboard</a></li>
+          <a href="{% url 'jobpost'%}">Post Job Openings</a>
+            {% comment %} <li>
+             
+                <span
+                  class="fa fa-magnifying-glass"
+                  width="5000px"
+                  heigth="5000px"
+                ></span
+                ><input
+                  type="text"
+                  class="search"
+                  placeholder="Search Resumes"
+                  class="in"
+                  style="border-radius: 10px;"
+                />
+              </a>
+            </li> {% endcomment %}
+          </div>
+          <a href="{% url 'company'%}">Company Branding</a>
+          <a href="{% url 'ats'%}">Applicant Tracking System</a>
+          <a href="{% url 'crt'%}">Recruitment Analytics</a>
+          <li><a href= "{% url 'jobl' %}">Joblist</a></li>
+          
+          </pre><pre> </pre><li><a href="{% url 'home'%}">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+          </ul>
+        </div>
+        
+      <div class="container">
+        <div class="dashboard-card">
+          <h2>Applicant Tracking System</h2>
+          <p>
+            Streamline your hiring process with our intuitive applicant tracking
+            system. Manage applications, schedule interviews, and communicate with
+            candidates effortlessly.
+          </p>
+         
+      </div>
+      <center>
+         <!-- Add more application items here -->
+         <table>
+          <caption>Applicants List</caption>
+          <thead>
+              <tr style="background-color:#DEB887">
+                  <td><h3>SNo</h3></td>
+                  <td><h3>Name</h3></td>
+                  <td><h3>Email</h3></td>
+                  <td><h3>Resume</h3></td>
+                  <td><h3>Title</h3></td>
+              </tr>
+          </thead>
+          <tbody>
+              {% comment %} type=models.CharField(null=True,max_length=200)
+      title=models.CharField(max_length=200,null=True)
+      description=models.CharField(max_length=2000,null=True)
+      salary=models.IntegerField(null=True)
+      experience=models.IntegerField(null=True)
+      Location=models.CharField(max_length=2000,null=True)
+      vacancy=models.IntegerField(null=True) {% endcomment %}
+      {% comment %} skills= {% endcomment %}
+              {% for i in job %}
+              <tr style="background-color:#DEB887">
+                  <td>{{forloop.counter}}</td>
+                  {% comment %} <td><h3>{{i.id}}</h3></td> {% endcomment %}
+                  <td><h3>{{i.name}}</h3></td>
+                  <td><h3>{{i.email}}</h3></td>
+                  <td><h3>{{i.resume}}</h3></td>
+                  <td><h3>{{i.jobtitle}}</h3></td>
+                
+              </tr>
+              {% endfor %}
+  
+          </tbody>
+      </table>
+
+
+    </center>
+    
+  </body>
+</html>
+

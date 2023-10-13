@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employe Login</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'home.css'%}" />
+    <link
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body style="background-image:url('{%static "media/home.png"%}');background-size:cover;">
+    <div style="background-image: url('p41.png');">
+    <header>
+      <nav>
+        <div class="logo">Job Portal Name</div>
+        <ul>
+          <li>
+            <li><a href="home.html">
+              <span class="fas fa-home" width="10000px" height="10000px"></span>
+              Home</a
+            ></li>
+
+            <a href="joblogin.html">
+              <span
+                class="fa fa-user-graduate"
+                width="9000px"
+                height="9000px"
+              ></span>
+              Login</a
+            >
+          </li>
+
+         
+          <li>
+            <a href="cresources.html"
+              ><span
+                class="fa fa-layer-group"
+                width="8000px"
+                height="8000px"
+              ></span>
+              Resources</a
+            >
+          </li>
+          <li><a href="signup.html" class="cta">Sign Up</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="feed">
+      <h2>Latest Job Recommendations</h2>
+      <div class="job-card">
+        <h3>Software Developer at Wipro</h3>
+        <p>Location: New York | Experience: 3+ years</p>
+      </div>
+      <div class="job-card">
+        <h3>Marketing Manager at Brandify</h3>
+        <p>Location: Los Angeles | Experience: 5+ years</p>
+      </div>
+      <div class="job-card">
+        <h3>Data Scientist at DataGenius</h3>
+        <p>Location: Bangalore | Experience: 2+ years</p>
+      </div>
+    </section>
+  </div>
+  </body>
+</html>

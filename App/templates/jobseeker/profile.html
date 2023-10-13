@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  {%  load static%}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="{%static 'profile.css' %}" />
+    <link rel="stylesheet" href="{%static 'home.css' %}" />
+    <link
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="background-image:url('{% static "media/Steps.jpg"%}');background-size:cover;opacity:1;">
+    <header>
+      <nav>
+        <div class="logo">Job Portal Name</div>
+        <ul>
+          <li><a href="{% url 'jobdash' %}">Dashboard</a></li>
+          <div>
+            <li>
+              
+                <span
+                  class="fa fa-magnifying-glass"
+                  width="5000px"
+                  heigth="5000px"
+                ></span
+                ><input
+                  type="text"
+                  class="search"
+                  placeholder="Search"
+                  class="in"
+                />
+              </a>
+            </li>
+          </div>
+          <li><a href="{% url 'profile'%}">
+            <span
+              class="fa fa-user-graduate"
+              width="5000px"
+              height="5000px"
+            ></span
+          > Profile</a></li>
+          <li><a href="{% url 'resume'%}">Resume Bulider</a></li>
+          <li>Hii{{users.name}}</li>
+          <li><a href="{% url 'logout'%}">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="profile-section">
+      <div class="profile-header">
+        <img
+          src="https://via.placeholder.com/150"
+          alt="User Profile Picture"
+          class="profile-pic"
+        />
+        <h1 style="color:blue;">{{user.name}}</h1> 
+       
+       <p>Software Developer</p>
+       {% comment %} <hr style="border:2px solid blue;"> {% endcomment %}
+
+      </div>
+      <div class="profile-details">
+        <h2>About Me</h2>
+        <p>
+          Passionate software developer with over 5 years of experience in
+          building web applications. Skilled in JavaScript, Python, and React.
+        </p>
+        {% comment %} <hr style="border:2px solid blue;"> {% endcomment %}
+        <h2>Experience</h2>
+        <ul>
+          <li>Senior Developer at TechCorp (2020-2023)</li>
+          <li>Junior Developer at Webify (2018-2020)</li>
+        </ul>
+        {% comment %} <hr style="border:2px solid blue;"> {% endcomment %}
+        <h2>Education</h2>
+        <ul>
+          <li>
+            Bachelor's in Computer Science from XYZ University (2014-2018)
+          </li>
+        </ul>
+        {% comment %} <hr style="border:2px solid blue;"> {% endcomment %}
+        <h2>Skills</h2>
+        <ul>
+          <li>Android Development</li>
+          <li>Python</li>
+          <li>Java</li>
+          <li>Html & CSS</li>
+          <li>C</li>
+        </ul>
+      </div>
+    </section>
+  </body>
+  <footer>
+    <p>&copy; 2023 Job Portal Name. All rights reserved.</p>
+  </footer>
+</html>

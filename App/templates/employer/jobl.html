@@ -1,0 +1,157 @@
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Job Portal Name</title>
+    <link
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'employer/employdash.css' %}" />
+  <style>
+    table {
+      width: 100%;
+      cursor: pointer;
+      box-shadow: 1px 1px 2px 2px #d4d0d0;
+      margin-top: 10px;
+      margin-bottom: 30px;
+      {% comment %} border-collapse: collapse; {% endcomment %}
+      min-width: 1000px;
+      caption-side: top;
+    }
+    
+    .table-container {
+      width: 95%;
+      margin: auto;
+      overflow: auto;
+      margin-bottom: 100px;
+      max-height: 700px;
+    }
+    
+    table td {
+      border-top: 1px solid #a39d9d;
+      border-bottom: 1px solid #a39d9d;
+      padding: 8px;
+    }
+    
+    table th {
+      border: 1px solid #a19c9c;
+      padding: 12px 10px;
+      text-align: left;
+      background-color: #b1aeae;
+      color: #ffffff;
+    }
+    
+    table tr {
+      transition: background-color 0.3s;
+    }
+    
+    table tr:nth-child(even) {
+      background-color: #ffffff;
+    }
+    
+    table tr:nth-child(odd) {
+      background-color: #cecccc;
+    }
+    
+    table tr:hover {
+      background-color: #b6aaaa;
+    }
+    
+    table caption {
+      background-color: #0e5b8f;
+      color: #ffffff;
+      padding: 12px 10px;
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    
+
+  </style>
+  
+  </head>
+  <body style="background-image: url('images/p51.png');">
+    <header>
+      <nav>
+        <div class="logo">Job Portal Name</div>
+        <ul>
+          <li><a href= "{% url 'employdash' %}">Dashboard</a></li>
+          <a href="{% url 'jobpost'%}">Post Job Openings</a>
+            {% comment %} <li>
+             
+                <span
+                  class="fa fa-magnifying-glass"
+                  width="5000px"
+                  heigth="5000px"
+                ></span
+                ><input
+                  type="text"
+                  class="search"
+                  placeholder="Search Resumes"
+                  class="in"
+                  style="border-radius: 10px;"
+                />
+              </a>
+            </li> {% endcomment %}
+          </div>
+          <a href="{% url 'company'%}">Company Branding</a>
+          <a href="{% url 'ats'%}">Applicant Tracking System</a>
+          <a href="{% url 'crt'%}">Recruitment Analytics</a>
+          <li><a href= "{% url 'jobl' %}">Joblist</a></li>
+          <li><a href="{% url 'home'%}">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+   
+    <table style="background-color:pink;">
+      <caption>Job Lists Posted By Employers</caption>     
+      <thead>
+            <tr style="background-color:#DEB887">
+                <td><h3>SNo</h3></td>
+                <td><h3>Type</h3></td>
+                <td><h3>Title</h3></td>
+                <td><h3>Location</h3></td>
+                <td><h3>Description</h3></td>
+                
+                <td><h3>Salary</h3></td>
+                <td><h3>Experience</h3></td>
+                
+                <td><h3>Vacancy</h3></td>
+                <td><h3>Skills</h3></td>
+            </tr>
+        </thead>
+        <tbody>
+            {% comment %} type=models.CharField(null=True,max_length=200)
+    title=models.CharField(max_length=200,null=True)
+    description=models.CharField(max_length=2000,null=True)
+    salary=models.IntegerField(null=True)
+    experience=models.IntegerField(null=True)
+    Location=models.CharField(max_length=2000,null=True)
+    vacancy=models.IntegerField(null=True) {% endcomment %}
+    {% comment %} skills= {% endcomment %}
+            {% for i in job %}
+            <tr style="background-color:#DEB887">
+                <td>{{forloop.counter}}</td>
+                {% comment %} <td><h3>{{i.id}}</h3></td> {% endcomment %}
+                <td><h3>{{i.type}}</h3></td>
+                <td><h3>{{i.title}}</h3></td>
+                <td><h3>{{i.Location}}</h3></td>
+                <td><h3>{{i.description}}</h3></td>
+                
+                <td><h3>{{i.salary}}</h3></td>
+                <td><h3>{{i.experience}}</h3></td>
+                
+                <td><h3>{{i.vacancy}}</h3></td>
+                <td><h3>{{i.skills}}</h3></td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+    
+  </body>
+</html>

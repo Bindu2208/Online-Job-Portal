@@ -1,0 +1,172 @@
+{% load static %}
+{% comment %} {% load %}  {% endcomment %}
+{% block body%}
+
+{% include 'navigation.html' %}
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Login</title>
+    {% comment %} <link rel="stylesheet" href={% %}"home.css" /> {% endcomment %}
+    <link
+    href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    rel="stylesheet"
+  />
+    <link rel="stylesheet" href="{%  static 'login.css'%}" />
+
+  </head>
+  <body style="background-image:url('{%static "media/home.png"%}');background-size:cover;">
+    <center>
+    <div class="get"  >
+      <div  class="left" >
+    <form  class="form2"  method="POST" name="register">
+      {% csrf_token %}
+      <center>
+
+        <h1 style="color:black; font-size: 22 " >Registration Form</h1>
+        
+        <label>User Name </label
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>
+          :</label
+        >&nbsp;&nbsp;&nbsp;&nbsp;
+        <input name="user" type="text" id="ta1" placeholder="Enter UserName" class="infield" required/>
+        <br />
+        
+        <label>Password</label
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>
+        :</label
+        >&nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="infield"
+        name="pwd"
+        type="password"
+        pattern="(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{\:;'?/>.<,])(?=.{8,})"
+        id="psw1"
+        placeholder="Enter Password" required
+      />
+<br />
+        <label>Confirm Password</label>&nbsp;&nbsp;<label> :</label
+        >&nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="infield"
+          name="cpwd"
+          type="password"
+          pattern="(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{\:;'?/>.<,])(?=.{8,})"
+          id="psw2"
+          placeholder="Enter Password Again...."  required
+        /><br />
+      <label>Email</label
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>
+          :</label
+        >&nbsp;&nbsp;&nbsp;
+        <input class="infield" name="email" type="email" id="email" placeholder="Enter Email" required/>
+        <br />
+        
+        <label>Phone Number</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>
+          :</label
+        >&nbsp;&nbsp;&nbsp;
+        <input class="infield"
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Entet Phone Number"
+          required maxlength="10" required
+        /><br />    
+        <input type="radio" value="Job Seekers" name="role" required>Job Seekers
+      <input type="radio" value="Employers" name="role" required>Employers<br>  
+      <input type='checkbox' name='terms' value='terms' required> I agree to the Terms and Conditions<br> 
+    <input type="submit" value="Submit" name="bt1" class="bt1">
+   
+
+  </form>
+</legend>
+<p style="border-right: thick solid #ff0000;"></p>
+</div>
+</div></center>
+
+<p class="footer">&copy; 2023 Job Portal Name. All rights reserved.</p>
+</body>
+    
+<script>
+   
+
+    
+  document.addEventListener("DOMContentLoaded", function() {
+      const form = document.querySelector("form2");
+
+      form.addEventListener("submit", function(event) {
+          // Prevent form submission
+          event.preventDefault();
+
+          // Role validation
+          const role = document.querySelector('input[name="role"]:checked');
+          if (!role) {
+              alert("Please select a role.");
+              return;
+          }
+
+          // Name validation
+          const name = form["user"].value;
+          if (name === "") {
+              alert("Please enter your name.");
+              return;
+          }
+
+          // Email validation
+          const email = form["email"].value;
+          const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;  // Modified to only allow Gmail addresses
+          if (!emailPattern.test(email)) {
+              alert("Please enter a valid Gmail address.");
+              return;
+          }
+
+          // Password validation
+          const password = form["pwd"].value;
+          // password should have at least one uppercase letter, one lowercase letter, one number, and one special character
+          const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{6,}$/;
+          if (!passwordPattern.test(password)) {
+              alert("Password must have at least one uppercase letter, one lowercase letter, one number, and one special character.");
+              return;
+          }
+
+         
+
+          // Confirm Password validation
+          const confirmPassword = form.querySelector('input[placeholder="Enter Password Again...."]').value;
+          if (password !== confirmPassword) {
+              alert("Passwords do not match.");
+              return;
+          }
+
+          // Terms and Conditions validation
+          
+          const terms = form.querySelector('input[type="checkbox"]').checked;
+          if (!terms) {
+              alert("Please accept the terms and conditions.");
+              return;
+          }
+
+          // If all validations pass, submit the form
+          form.submit();
+      });
+  });
+</script>
+</html>
+
+
+
+{% if error == "no" %}
+<script>
+  alert("Registered Successfully");
+  window.location=("{% url 'login' %}")
+</script>
+{% endif %}
+
+{% if error == "yes"%}
+<script>
+  alert("Not Registered : Something went Wrong Try Again....")
+</script>
+{% endif %} 
+
+{% endblock%}

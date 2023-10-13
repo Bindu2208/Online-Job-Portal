@@ -1,0 +1,141 @@
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Job Portal Name</title>
+    <link
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'jobseeker/jobdash.css'%}" />
+  </head>
+  {% comment %} <body style="background-image:url('{% static "media/needajob.jpg"%}'')"> {% endcomment %}
+    <header>
+      <nav>
+        <div class="logo">Job Portal Name</div>
+        <ul>
+          <li><a href="{% url 'jobdash' %}">Dashboard</a></li>
+          <div>
+            <li>
+              
+                <span
+                  class="fa fa-magnifying-glass"
+                  width="5000px"
+                  heigth="5000px"
+                ></span
+                ><input
+                  type="text"
+                  class="search"
+                  placeholder="Search"
+                  class="in"
+                />
+              </a>
+            </li>
+          </div>
+          <li><a href="{% url 'profile'%}">
+            <span
+              class="fa fa-user-graduate"
+              width="5000px"
+              height="5000px"
+            ></span
+          > Profile</a></li>
+          <li><a href="{% url 'resume'%}">Resume Bulider</a></li>
+          <li><a href="{% url 'logout'%}">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <body style="background-image:url('{% static "media/Steps.jpg"%}');background-size:cover;">
+      <marquee><h1  style="color:red">Welcome, {{user.name}}!!</h1></marquee>
+    <div class="container" style="float:left;">
+      {% for i in main %}
+      <div class="job-listing">
+        <h2 class="job-title">{{i.title}}</h2>
+        
+        <p class="job-descri🔗ption">Type &nbsp;: {{i.type}}</p>
+        <p class="job-description">🗒️
+          {{i.description}}
+        </p>
+        <p class="job-description">💲Salary&nbsp; :{{i.salary}}</p>
+        <p class="job-description">🚩Location &nbsp;:{{i.Location}}</p>
+        <p class="job-description">⌛Experience : &nbsp;{{i.experience}}</p>
+        <p class="job-description">🪧Vacancy &nbsp; :{{i.vacancy}}</p>
+        <p class="job-description">🤹Skills&nbsp;:{{i.skills}}</p>
+        
+        {% comment %} {% if i.id in li %}
+        <button class="apply-button" disabled>Applied</button>
+        {% else %}
+        <a href="{% url 'jobdetails' i.id %}"><button class="apply-button">Apply Now</button></a>
+        {% endif %} {% endcomment %}
+
+        <a href="{% url 'apply' %}"><button id="applyButton"   class="apply-button">Apply Now</button></a>
+         {% comment %} <button class="apply-button">Apply Now</button>  {% endcomment %}
+        {% comment %} {% endif %} {% endcomment %}
+      </div>
+     {%endfor%}
+      {% comment %} <div class="job-listing">
+        <h2 class="job-title">Marketing Specialist</h2>
+        <p class="company-name">XYZ Marketing Agency</p>
+        <p class="job-description">
+          Join our marketing team to create and implement strategies...
+        </p>
+        <button class="apply-button">Apply Now</button>
+      </div>
+      </div>
+      <div class="container" style="float:left;">
+      
+        <div class="job-listing">
+          <h2 class="job-title">{{}}</h2>
+          <p class="company-name">ABC Tech Solutions</p>
+          <p class="job-description">
+            We are looking for a skilled front-end developer to join our team...
+          </p>
+          <button class="apply-button">Apply Now</button>
+        </div>
+        
+        {% endcomment %}
+        {% comment %} <div class="job-listing">
+          <h2 class="job-title">Marketing Specialist</h2>
+          <p class="company-name">XYZ Marketing Agency</p>
+          <p class="job-description">
+            Join our marketing team to create and implement strategies...
+          </p>
+          <button class="apply-button">Apply Now</button>
+        </div>
+        </div> {% endcomment %}
+
+        <pre>         </pre>
+        <pre>         </pre>
+        <br>
+        <br>
+        <br>
+        <br><br>
+        <h2>Suggestions</h2>
+        <div class="suggestion">
+          <img src="https://via.placeholder.com/50" alt="User Image" />
+          <p>UserName</p>
+        </div>
+        <h2>Recent Chats</h2>
+        <div class="chat">
+          <img src="https://via.placeholder.com/50" alt="User Image" />
+          <p>UserName</p>
+         </div>
+        </div>
+        
+  </body>
+  
+</html>
+<script>
+  var applyButton = document.getElementById("applyButton");
+
+  // Add a click event listener to the button
+  applyButton.addEventListener("click", function() {
+      // Change the button text to "Applied"
+      applyButton.innerText = "Applied";
+
+      // Optionally, you can disable the button after it's applied
+      applyButton.disabled = true;
+  });
+</script>

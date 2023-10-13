@@ -1,0 +1,27 @@
+/* #cv-form
+{
+    /* display: none; */
+/* } */
+
+
+/* #cv-form
+{
+    /* display: none; */
+/* } */ */
+
+#cv-template
+{
+    display: none;
+}
+.myimg
+{
+    border:1px solid red;
+    border-radius: 50%;
+    width:200px;
+}
+
+.background
+{
+    background-color: cadetblue;
+    
+}

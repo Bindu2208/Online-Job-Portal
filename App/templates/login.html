@@ -1,0 +1,49 @@
+{% load static%}
+
+{% block body%}
+{% include "navigation.html"%}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'login.css'%}">
+    </head>
+<body style="background-image:url('{%static "media/home.png"%}')">
+<div class="right" >
+    <form  class="form1" action="{%url 'login'%}" method="POST">
+        {% csrf_token %}
+      <pre>       </pre>
+      <pre>       </pre>
+      <pre>       </pre>
+        <center>
+          <h1 style="color:black; font-size: 22">Login Form</h1>
+          <label>Email </label
+          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>
+            &nbsp;&nbsp;&nbsp;&nbsp;:</label
+          >&nbsp;&nbsp;&nbsp;&nbsp;
+          <input name="email" type="email" id="email" placeholder="Enter Email" class="infield"/>
+          <br />
+          
+          <label>Password</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>
+          :</label>&nbsp;&nbsp;&nbsp;&nbsp;
+          <input class="infield"
+          name="pwd"
+          type="password"
+          pattern="(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{\:;'?/>.<,])(?=.{8,})"
+          id="pwd"
+          placeholder="Enter Password" 
+        /><br />
+      <input type="radio" value="jobseeker" name="role">Job Seekers
+        <input type="radio" value="employers" name="role">Employers<br>
+        <input type="submit" value="Submit" name="bt1" class="bt1">
+     
+    </form>
+  
+  </center>
+      </div>
+  </div>
+  <p class="footer">&copy; 2023 Job Portal Name. All rights reserved.</p>
+</body>
+
+</html>
+{% endblock %}
+
+

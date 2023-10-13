@@ -1,0 +1,112 @@
+.bindu
+{
+    text-align:center;
+    margin-top: 40px;
+   
+}
+body
+{
+    background:linear-gradient(cornflowerblue,darkseagreen);
+   
+}
+form{
+    width:20%;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    left:50%;
+    transform:translate(-50%);
+
+}
+form input{
+   
+    border:1px solid rgba(0,0,0,0.4);
+    border-radius: 10px;
+    outline:none;
+    height: 30px;
+    width: 100%;
+
+}
+
+
+input::placeholder{
+    font-weight:normal;
+    font-size:13px;
+ 
+}
+input:focus::placeholder{
+    position:absolute;
+    font-size:10px;
+   
+}
+form button{
+    border:none;
+    background:#043fff;
+    padding:5px 0;
+    color:#fff;
+    border-radius:3px;
+    font-weight: bold;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    outline: none;
+    cursor: pointer;
+}
+form button:active{
+    background: #2c58fe;
+    transform:scale(0.995);
+}
+form .option{
+    color:#5a5a5a;
+    margin:10px 0;
+    font-weight:bold;
+    position:relative;
+}
+form .option:before{
+    position:absolute;
+    content:'';
+    width:37%;
+    height:2px;
+    background:#b6b6b6;
+    left:0;
+    top:50%;
+   
+    border-radius:50px;
+}
+form .option:after{
+    position:absolute;
+    content:'';
+    width:37%;
+    height:2px;
+    background:#b6b6b6;
+    right:0;
+    top:50%;
+    transform: translateY(-50%);
+    border-radius:50px;
+}
+.forget-id{
+    margin:15px;
+}
+.forget-id a{
+    text-decoration:none;
+    color:#025fd2;
+    font-size:12px;
+    font-weight:500;
+
+}
+.page.register{
+    position:relative;
+    border:1px solid #b6b6b6;
+    border-radius:2px;
+    width:90%;
+    left:50%;
+    transform:translateY(-50%);
+    margin-top:30px;
+}
+.register a{
+    text-decoration: none;
+    margin-left:5px;
+    color:#008aff;
+    font-weight:bold;
+
+
+}

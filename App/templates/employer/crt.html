@@ -1,0 +1,108 @@
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Job Portal Name</title>
+    <link
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'employer/employdash.css'%}" />
+  </head>
+ 
+    <header>
+      <nav>
+        <div class="logo">Job Portal Name</div>
+        <ul>
+          <li><a href= "{% url 'employdash' %}">Dashboard</a></li>
+          <a href="{% url 'jobpost'%}">Post Job Openings</a>
+            {% comment %} <li>
+             
+                <span
+                  class="fa fa-magnifying-glass"
+                  width="5000px"
+                  heigth="5000px"
+                ></span
+                ><input
+                  type="text"
+                  class="search"
+                  placeholder="Search Resumes"
+                  class="in"
+                  style="border-radius: 10px;"
+                />
+              </a>
+            </li> {% endcomment %}
+          </div>
+          <a href="{% url 'company'%}">Company Branding</a>
+          <a href="{% url 'ats'%}">Applicant Tracking System</a>
+          
+        <a href="{% url 'crt'%}">Recruitment Analytics</a>
+        <li><a href= "{% url 'jobl' %}">Joblist</a></li>
+        <li><a href="{% url 'home'%}">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+   
+    <body style="background-image: url('{% static "media/a1.jpeg"%}');background-size:cover;">
+        <h1 >Recruitment Analytics Dashboard</h1>
+    
+    <div class="container">
+        <h2>Analytics Overview</h2>
+        {% comment %} <form action="generateRandomData() "> {% endcomment %}
+
+            {% comment %} <div class="form-group">
+                <label for="analyticsChart">Analytics Chart</label>
+                <canvas id="analyticsChart" width="400" height="200"></canvas>
+                <small class="form-text text-muted">This is an example of a chart generated using Chart.js</small>
+                <br />
+                <button type="submit" class="btn btn-primary">Update Chart</button>
+                
+            </div> {% endcomment %}
+        {% comment %} </form> {% endcomment %}
+        <!-- Add your charts and analytics data here -->
+    
+    <img src="{% static 'media/crt1.png'%}" alt="Avatar" class="avatar"height="300px" style="opacity:10px;">
+      </div>
+
+    <script>
+        // Add your JavaScript for dynamic behavior here
+        // You can use libraries like Chart.js or D3.js for data visualization
+        // For simplicity, here's an example of generating a random chart
+        function generateRandomData() {
+            return Array.from({ length: 5 }, () => Math.floor(Math.random() * 100));
+        }
+
+        const data = generateRandomData();
+
+        // Example using Chart.js for a bar chart
+        const ctx = document.getElementById('analyticsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5'],
+                datasets: [{
+                    label: 'Analytics Data',
+                    data: data,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    <footer>
+      <p>&copy; 2023 Job Portal Name. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

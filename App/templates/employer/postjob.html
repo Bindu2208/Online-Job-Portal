@@ -1,0 +1,113 @@
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Job Portal Name</title>
+    <link
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="{% static 'employer/employdash.css' %}" />
+    <link rel="stylesheet" href="{% static 'employer/postjob.css' %}" />
+  </head>
+ 
+    <header>
+      <nav>
+        <div class="logo">Job Portal Name</div>
+        <ul>
+          <li><a href= "{% url 'employdash' %}">Dashboard</a></li>
+          <a href="{% url 'jobpost'%}">Post Job Openings</a>
+          
+            {% comment %} <li>
+             
+                <span
+                  class="fa fa-magnifying-glass"
+                  width="5000px"
+                  heigth="5000px"
+                ></span
+                ><input
+                  type="text"
+                  class="search"
+                  placeholder=" Search Resumes"
+                  class="in"
+                  style="border-radius: 10px;"
+                />
+              </a>
+            </li> {% endcomment %}
+          </div>
+          <a href="{% url 'company'%}">Company Branding</a>
+          <a href="{% url 'ats'%}">Applicant Tracking System</a>
+          
+          <a href="{% url 'crt'%}">Recruitment Analytics</a>
+          <li><a href= "{% url 'jobl' %}">Joblist</a></li>
+          <li><a href="{% url 'login'%}">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+   
+    
+    <center>
+    <!-- <div class="dashboard">
+      <!-- <section class="feed">
+        <h2> Job Posted</h2>
+        <div class="job-post">
+          <h3>Frontend Developer at WebTech</h3>
+          <p>Location: Bangalore | Experience: 2+ years</p>
+        </div>
+        <div class="job-post">
+          <h3>Data Analyst at DataGenius</h3>
+          <p>Location: New York | Experience: 3+ years</p>
+        </div>
+      </section> -->
+      <body style="background-image: url('{% static "media/arrows2.jpeg"%}');background-size:cover;">
+      <br><div style="float:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+      <div class="form-container" style="float:left;">
+
+     <legend><h1 class="form-legend">Post Job Openings</h1></legend>
+   <form action="{% url 'jobpost' %}" method="POST">
+    {% csrf_token %}
+    <label for="jobtitle">Job Title &nbsp;&nbsp;:</label>&nbsp;&nbsp;
+    <input type="text" id="jobtitle" name="jobtitle" placeholder="Job Title.."><br><br>
+    <label for="jobtype">Job Type &nbsp;&nbsp;:</label>&nbsp;&nbsp;&nbsp;
+    <input type="text" id="jobtype" name="jobtype" placeholder="Job Type.."><br><br>
+    <label for="joblocation">Job Location &nbsp;&nbsp;:</label>&nbsp;&nbsp;
+    <input type="text" id="joblocation" name="joblocation" placeholder="Job Location.."><br><br>
+    <label for="jobdescription">Job Description &nbsp;:</label>
+    <input type="text" id="jobdescription" name="jobdescription" placeholder="Job Description.."><br><br>
+   
+    <label for="jobvacancy">Job Vacancy &nbsp;&nbsp;:</label>
+    <input type="text" id="jobvacancy" name="jobvacancy" placeholder="Job Vacancy.."><br><br>
+    <label for="jobexperience">Job Experience &nbsp;&nbsp;:</label>
+    <input type="text" id="jobexperience" name="jobexperience" placeholder="Job Experience.."><br><br>
+    
+    
+    <label for="jobsalary">Job Salary &nbsp;&nbsp;:</label>
+    <input type="text" id="jobsalary" name="jobsalary" placeholder="Job Salary.."><br><br>
+    <label for="jobskills">Job Skills &nbsp;&nbsp;:</label>
+    <input type="text" id="jobskills" name="jobskills" placeholder="Job Skills.."><br><br>
+
+    <input style="background-color:chocolate"type="submit" value="Submit">
+   </form>
+  </legend>
+</div>
+</center>
+    
+  </body>
+</html>
+{% if error == "no"%}
+<script>
+  alert("Job Posted Successfully");
+  window.location.href = "{% url 'employdash' %}";
+</script>
+{% endif %}
+{% if error == "yes"%}
+<script>
+  alert("Job Posting Failed");
+  window.location.href = "{% url 'jobpost' %}";
+</script>
+{% endif %}
+

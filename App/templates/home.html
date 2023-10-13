@@ -1,0 +1,49 @@
+
+{% include "navigation.html" %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Job Portal Name</title>
+    {% load static%}
+    <link  href="{% static 'home.css'%}" rel="stylesheet"/>
+    <link
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stySlesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HKSfgLBL+xu6dm/11324xh1SUyZgTT9tuc/hSrtw6uzJ0vgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qx08" crossorigin="anonymous"> -->
+  </head>
+  <body class="respon" style="background-image:url('{%static "media/home.png"%}');background-size:cover;">
+    
+    </header>
+    <div class="hero">
+      <h1>Discover Your Dream Job</h1>
+      <p style="justify-content: center">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati
+        natus reprehenderit exercitationem rerum vero molestias praesentium?
+        Animi vitae odit omnis quam et culpa, fuga, magnam nam totam velit
+        dolorem voluptate? Explore a diverse range of job opportunities from
+        leading companies across various industries.
+      </p>
+      <br />
+      <centre>
+        <nav>
+          <ul> <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre> <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre>
+            <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre> <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre>
+            <li><a href="{% url 'signup'%}" class="cta">Get Started</a></li>
+            <br /><br /> 
+            <li><a href="{% url 'joblist'%}" class="cta">Job Recommendations</a></li>
+            
+          </ul>
+        </nav>
+     
+    </div>
+  </centre>
+  <footer>
+    <p class="footer">&copy; 2023 Job Portal Name. All rights reserved.</p>
+  </footer>
+  </body>
+</html>
+
+

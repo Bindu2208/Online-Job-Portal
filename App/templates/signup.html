@@ -1,0 +1,102 @@
+{% load static%} {% block body%} {% include "navigation.html"%}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Portal Name</title>
+    {% comment %}
+    <link rel="stylesheet" href="home.css" />
+    {% endcomment %} <link rel="stylesheet" href="{% static "signup.css"%}" />
+    <link
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HKSfgLBL+xu6dm/11324xh1SUyZgTT9tuc/hSrtw6uzJ0vgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qx08" crossorigin="anonymous"> -->
+  </head>
+  <body style="background-image:url('{%static "media/home.png"%}');background-size:cover;">
+    <h1 style="text-align: center">Sign Up</h1>
+    <div class="bindu">
+      <form>
+        {% csrf_token %}
+        <label>&nbsp;&nbsp;FIRST NAME &nbsp;&nbsp;&nbsp; </label>
+        <input
+          type="text"
+          placeholder="Enter your first name"
+          name="first_name"
+          required
+        />
+        <br />
+        <label>&nbsp;&nbsp;LAST NAME &nbsp;&nbsp;&nbsp;</label>
+        <input
+          type="text"
+          placeholder="Enter your last name"
+          name="last_name"
+          required
+        />
+        <br />
+        <label
+          style="
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;
+          "
+          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-MAIL
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+        >
+        <input
+          type="text"
+          placeholder="Enter your e-mail address"
+          name="e_mail"
+          required
+        /><br />
+        <label
+          style="
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;
+          "
+          >DATE OF BIRTH &nbsp;</label
+        >
+        <input type="date" name="dob" required /><br />
+        <label
+          style="
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;
+          "
+          >&nbsp;SET USERNAME&nbsp;</label
+        >
+        <input
+          type="text"
+          placeholder=" Set username"
+          name="username"
+          required
+        /><br />
+        <label
+          style="
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;
+          "
+        >
+          &nbsp;&nbsp;&nbsp;PASSWORD &nbsp;&nbsp;&nbsp;&nbsp;</label
+        >
+        <input
+          type="text"
+          placeholder="Set Password"
+          name="password"
+          required
+        /><br />
+        <button>Sign Up</button>
+        <div class="option">OR</div>
+      </form>
+      <div class="forget-id">
+        <a href="#">Forget password</a>
+      </div>
+      <div class="register">
+        <p style="color: brown">
+          Don't have an account?<a href="#">register</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+
+{% endblock%}

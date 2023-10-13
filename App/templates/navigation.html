@@ -1,0 +1,73 @@
+{% load static%} {% block body%}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Job Portal Name</title>
+    <link href="{% static 'home.css' %}" rel="stylesheet" />
+    <link
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      rel="stylesheet"
+    />
+
+    {% comment %}
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HKSfgLBL+xu6dm/11324xh1SUyZgTT9tuc/hSrtw6uzJ0vgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qx08" crossorigin="anonymous"> -->
+    {% endcomment %}
+  </head>
+  <body>
+    <header>
+      <nav>
+        <i class=""></i>
+        <div class="logo">
+          <span class="fa fa-briefcase" width="8000px" height="8000px"></span
+          >Job Portal Name
+        </div>
+        <ul>
+          <li>
+            <a href="{% url 'home' %}">
+              <span class="fas fa-home" width="10000px" height="10000px"></span>
+              Home</a
+            >
+            <a></a>
+          </li>
+          <li>
+            <a href="{% url 'login' %}">
+              <span
+                class="fa fa-user-graduate"
+                width="9000px"
+                height="9000px"
+              ></span>
+              Login</a
+            >
+          </li>
+          <li>
+            <a href="{% url 'register' %}">
+              <span
+                class="fa fa-user-graduate"
+                width="9000px"
+                height="9000px"
+              ></span>
+              Register</a
+            >
+          </li>
+
+          <li>
+            <a href="{% url 'cres'%}"
+              ><span
+                class="fa fa-layer-group"
+                width="8000px"
+                height="8000px"
+              ></span>
+              Resources</a
+            >
+          </li>
+          <li>
+            <a class="cta" href="{% url 'signup'%}">Sign Up</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>
+
+{% endblock %}

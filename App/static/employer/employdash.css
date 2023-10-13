@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    position: relative;
+    min-height: 100vh;
+}
+.in
+{
+    max-width:200px;
+    width:100%;
+    height:40px;
+    border-radius: 55px;
+    font-size: 10px;
+    font-weight: 200;
+    text-align: center;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ddd;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.feed {
+    flex: 2;
+    margin-right: 20px;
+}
+
+.job-post {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.sidebar {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.suggestion, .chat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.hero {
+   
+    padding: 1000px 0;
+    height:100px;
+    text-align: center;
+    width: 30%;
+}

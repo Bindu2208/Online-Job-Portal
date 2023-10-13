@@ -1,0 +1,91 @@
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Job Portal Name</title>
+    <link
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'jobseeker/jobdash.css'%}" />
+    <link rel="stylesheet" href="{% static 'employer/postjob.css' %}" />
+  </head>
+  <body style="background-image:url('{% static "media/needajob.jpg"%}');background-size:cover;">
+    <header>
+      <nav>
+        <div class="logo">Job Portal Name</div>
+        <ul>
+          <li><a href="{% url 'jobdash' %}">Dashboard</a></li>
+          <div>
+            <li>
+              
+                <span
+                  class="fa fa-magnifying-glass"
+                  width="5000px"
+                  heigth="5000px"
+                ></span
+                ><input
+                  type="text"
+                  class="search"
+                  placeholder="Search"
+                  class="in"
+                />
+              </a>
+            </li>
+          </div >
+          <li><a href="{% url 'profile'%}">
+            <span
+              class="fa fa-user-graduate"
+              width="5000px"
+              height="5000px"
+            ></span
+          > Profile</a></li>
+          <li><a href="{% url 'resume'%}">Resume Bulider</a></li>
+          <li><a href="{% url 'logout'%}">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+     <br> 
+    <center>
+    {% comment %} <div style="float:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div> {% endcomment %}
+        <div class="form-container" style="background-color:cornsilk;">
+
+       <legend><h1 class="form-legend">Apply For The Job</h1></legend>
+     <form action="{% url 'apply' %}" method="POST">
+      {% csrf_token %}
+      <label for="name">Name :</label>
+      <input type="text" name="name" id="name" placeholder="Enter Your Name" required><br><br>
+      <label for="email">Email :</label>
+      <input type="email" name="email" id="email" placeholder="Enter Your Email" required><br><br>
+      <label for="phone">Phone :</label>
+      <input type="tel" name="phone" id="phone" placeholder="Enter Your Phone Number" required><br><br>
+      <label for="resume">Resume :</label>
+      <input type="file" name="resume" id="resume" accept=".pdf" required><br><br>
+      <label for="jobtitle">Job Title :</label>
+      <input type="text" name="jobtitle" id="jobtitle" placeholder="Enter Job Title" required><br><br>
+      <input style="background-color:chocolate"type="submit" value="Apply">
+     </form>
+    </legend>
+  
+  </center>
+      
+</div> 
+
+</body>
+
+ </html>
+  {% if error == "no"%}
+  <script>
+    alert("Applied Successfully");
+    window.location.href = "{% url 'jobdash' %}";
+  </script>
+  {% endif %}
+  {% if error == "yes"%}
+  <script>
+    alert("Application Failed");
+    window.location.href = "{% url 'apply' %}";
+  </script>
+  {% endif %}
