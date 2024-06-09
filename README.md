@@ -1,15 +1,18 @@
 **Design an Online Job Portal website 
 Discover Your Dream Job:**
+
 At [Job Portal Name], we understand the significance of finding the perfect job that aligns 
 with your skills, aspirations, and career goals. Our user-friendly platform is designed to 
 help you explore a diverse range of job opportunities from leading companies across 
 various industries. Whether you are a seasoned professional or a fresh graduate, we've 
 got something for everyone! 
 How It Works: 
+
 1.**Create Your Profile**: Begin your journey by registering on our platform and building 
 a comprehensive profile that showcases your qualifications, work experience, and 
 accomplishments. The more detailed your profile, the better your chances of being 
 noticed by employers. 
+
 2.**Search and Apply**: Utilize our advanced search filters to narrow down your job 
 preferences based on location, industry, experience level, and more. Browse through an 
 extensive database of job listings, and when you find the one that excites you, submit 
